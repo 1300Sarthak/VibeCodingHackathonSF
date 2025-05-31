@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GhostGov Settings</title>
+    <style>
+        body {
+            width: 350px;
+            padding: 20px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        h2 {
+            margin: 0 0 15px 0;
+            color: #2196F3;
+            text-align: center;
+        }
+
+        .api-key-section {
+            background: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid #2196F3;
+            margin-bottom: 20px;
+        }
+
+        .api-key-section h3 {
+            margin: 0 0 10px 0;
+            color: #2196F3;
+            font-size: 16px;
+        }
+
+        .api-instructions {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section h3 {
+            margin: 0 0 10px 0;
+            font-size: 14px;
+            color: #666;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 13px;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 14px;
+        }
+
+        #apiKey {
+            border: 2px solid #2196F3;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 20px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 2px;
+            bottom: 2px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(20px);
+        }
+
+        button {
+            background: #2196F3;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #1976D2;
+        }
+
+        .status-message {
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            text-align: center;
+            font-size: 12px;
+        }
+
+        .status-success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #c3e6cb;
+        }
+
+        .status-error {
+            background: #f8d7da;
+            color: #721c24;
+            border: 1px solid #f5c6cb;
+        }
+    </style>
+</head>
+<body>
+    <h2>🏛️ GhostGov Setup</h2>
+    
+    <div id="status-message" class="status-message" style="display: none;"></div>
+    
+    <div class="api-key-section">
+        <h3>⚠️ OpenAI API Key Required</h3>
+        <div class="api-instructions">
+            1. Get your API key from <strong>platform.openai.com/api-keys</strong><br>
+            2. Paste it below (starts with "sk-")<br>
+            3. Click Save to start using GhostGov
+        </div>
+        <div class="form-group">
+            <input type="password" id="apiKey" placeholder="sk-proj-..." required>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Profile Information (Optional)</h3>
+        <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="John Doe">
+        </div>
+        <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" placeholder="123 Main St, San Francisco, CA 94102">
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="(555) 555-5555">
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Features</h3>
+        <div class="form-group">
+            <label>
+                Spanish Translation
+                <label class="switch">
+                    <input type="checkbox" id="spanish-toggle">
+                    <span class="slider"></span>
+                </label>
+            </label>
+        </div>
+        <div class="form-group">
+            <label>
+                Auto-fill Forms
+                <label class="switch">
+                    <input type="checkbox" id="autofill-toggle">
+                    <span class="slider"></span>
+                </label>
+            </label>
+        </div>
+    </div>
+
+    <button id="save-settings">Save Settings & Start Using GhostGov</button>
+
+    <div class="section" style="margin-top: 20px; padding-top: 15px; border-top: 1px solid #eee;">
+        <h3>Debug (Remove after testing)</h3>
+        <button id="test-storage" style="background: #6c757d; margin-bottom: 5px;">Test Storage</button>
+        <button id="clear-storage" style="background: #dc3545;">Clear All Storage</button>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html> 

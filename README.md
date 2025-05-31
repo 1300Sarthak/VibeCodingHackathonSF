@@ -1,54 +1,65 @@
-# React + TypeScript + Vite
+# GhostGov Chrome Extension
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Chrome extension that provides an AI-powered assistant for California government services and information. The assistant helps users with tasks like understanding legal documents, finding government services, and filling out forms.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Floating chat bubble on all websites
+- AI-powered responses using OpenAI GPT-4
+- Text simplification for highlighted content
+- Spanish translation support
+- Form autofill capabilities
+- California-specific government information and resources
 
-## Expanding the ESLint configuration
+## Setup
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. Clone this repository
+2. Open Chrome and navigate to `chrome://extensions/`
+3. Enable "Developer mode" in the top right
+4. Click "Load unpacked" and select the extension directory
+5. Replace `YOUR_API_KEY` in `background.js` with your OpenAI API key
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## Usage
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Chat Interface
+- Click the floating chat bubble to open the chat window
+- Type your questions about California government services
+- Use the Spanish toggle to get responses in Spanish
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Text Simplification
+1. Highlight any text on a webpage
+2. Click the "Simplify" button that appears
+3. Get a simplified explanation in the chat window
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Form Autofill
+1. Open the extension popup
+2. Enter your profile information
+3. Enable "Auto-fill Forms" in settings
+4. Visit government websites to automatically fill forms
+
+## Development
+
+### Project Structure
+- `manifest.json`: Extension configuration
+- `content.js`: Injects UI and handles page interactions
+- `popup.html/js`: Extension popup interface
+- `background.js`: Handles API calls and background tasks
+- `styles.css`: UI styling
+
+### API Integration
+The extension uses OpenAI's GPT-4 API for generating responses. Make sure to:
+1. Have a valid OpenAI API key
+2. Replace the placeholder in `background.js`
+3. Keep your API key secure
+
+## Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+MIT License - see LICENSE file for details 
