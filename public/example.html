@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GhostGov Widget Example</title>
+    <!-- Load React and ReactDOM -->
+    <script crossorigin src="https://unpkg.com/react@19/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@19/umd/react-dom.production.min.js"></script>
+    <!-- Load the widget -->
+    <script src="/ghostgov-widget.umd.js"></script>
+    <link href="/ghostgov-widget.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Example Government Website</h1>
+    <p>This is an example of how to embed the GhostGov Widget on any .gov website.</p>
+
+    <script>
+        // Initialize the widget
+        window.GhostGovWidget.init({
+            position: 'bottom-right', // or 'bottom-left'
+            primaryColor: '#2563eb', // optional: customize the primary color
+            darkMode: false // optional: enable dark mode
+        });
+    </script>
+</body>
+</html> 

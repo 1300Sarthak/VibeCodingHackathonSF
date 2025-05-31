@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="128" height="128" viewBox="0 0 128 128" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="128" height="128" rx="24" fill="#2563EB"/>
+  
+  <!-- Building icon -->
+  <path d="M64 24L24 44V104H104V44L64 24Z" fill="white" fill-opacity="0.9"/>
+  <path d="M44 64H52V84H44V64Z" fill="#2563EB"/>
+  <path d="M60 64H68V84H60V64Z" fill="#2563EB"/>
+  <path d="M76 64H84V84H76V64Z" fill="#2563EB"/>
+  
+  <!-- Chat bubble -->
+  <path d="M88 32C88 28.6863 91.3137 26 95 26C98.6863 26 102 28.6863 102 32V48C102 51.3137 98.6863 54 95 54H90L86 58L82 54H95C98.6863 54 102 51.3137 102 48V32C102 28.6863 98.6863 26 95 26C91.3137 26 88 28.6863 88 32Z" fill="white"/>
+</svg> 
